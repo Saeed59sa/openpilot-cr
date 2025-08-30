@@ -859,6 +859,31 @@ class CAR(Platforms):
     flags=HyundaiFlags.CANFD_ANGLE_STEERING,
   )
 
+  # --- Hyundai CAN-FD platforms above ---
+
+  # --------------------------------------------------------------------------
+  # Genesis GV80 (1st Gen, CAN-FD)
+  # Platform runs on CAN-FD at 500 kbps arbitration / 2000 kbps data (from log).
+  # steerRatio (13.0) comes directly from liveParameters in the log.
+  # Units:
+  #   - mass in kilograms
+  #   - wheelbase in meters
+  #   - steerRatio is dimensionless
+  #   - tireStiffnessFactor is unitless scaling
+  # NOTE: mass and wheelbase are placeholders until verified against spec/first drive.
+  # --------------------------------------------------------------------------
+  GENESIS_GV80_1ST_GEN = HyundaiCanFDPlatformConfig(
+    # Required harness: Hyundai A
+    [HyundaiCarDocs("Genesis GV80 (1st Gen, CAN-FD)", "All", car_parts=CarParts.common([CarHarness.hyundai_a]))],
+    # Car specifications
+    CarSpecs(
+      mass=2200,        # kg — placeholder, refine after validation
+      wheelbase=2.95,   # m  — placeholder, refine after validation
+      steerRatio=13.0,  # from liveParameters (log)
+      tireStiffnessFactor=0.70  # conservative initial stiffness factor
+    ),
+  )
+
 class Buttons:
   NONE = 0
   RES_ACCEL = 1
