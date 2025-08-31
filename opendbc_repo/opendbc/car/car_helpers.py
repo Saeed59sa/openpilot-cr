@@ -145,7 +145,7 @@ def fingerprint(can_recv: CanRecvCallable, can_send: CanSendCallable, set_obd_mu
 
   selected_car = Params().get("SelectedCar")
   if selected_car:
-    car_fingerprint = selected_car.decode("utf-8")
+    car_fingerprint = selected_car
 
   carlog.error({"event": "fingerprinted", "car_fingerprint": str(car_fingerprint), "source": source, "fuzzy": not exact_match,
                 "cached": cached, "fw_count": len(car_fw), "ecu_responses": list(ecu_rx_addrs), "vin_rx_addr": vin_rx_addr,
@@ -164,7 +164,7 @@ def get_car(can_recv: CanRecvCallable, can_send: CanSendCallable, set_obd_multip
 
   selected_car = Params().get("SelectedCar")
   if selected_car:
-    found_platform = extract_platform(selected_car.decode("utf-8"))
+    found_platform = extract_platform(selected_car)
     if found_platform is not None:
       candidate = found_platform
 
