@@ -859,6 +859,11 @@ class CAR(Platforms):
     flags=HyundaiFlags.CANFD_ANGLE_STEERING,
   )
 
+  GENESIS_GV80_1ST_GEN = HyundaiCanFDPlatformConfig(
+    [HyundaiCarDocs("Genesis GV80 (1st Gen, CAN-FD)", "All", car_parts=CarParts.common([CarHarness.hyundai_a]))],
+    CarSpecs(mass=2200, wheelbase=2.95, steerRatio=13.0, tireStiffnessFactor=0.70), # conservative defaults
+  )
+
 class Buttons:
   NONE = 0
   RES_ACCEL = 1
