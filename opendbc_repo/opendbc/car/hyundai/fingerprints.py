@@ -1283,10 +1283,10 @@ FW_VERSIONS = {
   },
   CAR.GENESIS_GV80_1ST_GEN: {
     (Ecu.fwdRadar, 0x7d0, None): [
-      # TODO: add GV80 radar FW (b'\xf1\x00 ...')
+      b'\xf1\x00JX1_ SCC -----      1.00 1.03 99110-T6000         ',
     ],
     (Ecu.fwdCamera, 0x7c4, None): [
-      # TODO: add GV80 MFC FW (b'\xf1\x00 ...')
+      b'\xf1\x00JX1 MFC  AT KOR LHD 1.00 1.04 99211-T6010 200514',
     ],
   },
   CAR.GENESIS_G80_PE: {  # (RG3)
