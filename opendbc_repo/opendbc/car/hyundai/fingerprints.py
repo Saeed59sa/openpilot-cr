@@ -1281,6 +1281,14 @@ FW_VERSIONS = {
       b'\xf1\x00JX__ RDR -----      1.00 1.03 99110-T6500         ',
     ],
   },
+  CAR.GENESIS_GV80_1ST_GEN: {
+    (Ecu.fwdRadar, 0x7d0, None): [
+      # TODO: add GV80 radar FW (b'\xf1\x00 ...')
+    ],
+    (Ecu.fwdCamera, 0x7c4, None): [
+      # TODO: add GV80 MFC FW (b'\xf1\x00 ...')
+    ],
+  },
   CAR.GENESIS_G80_PE: {  # (RG3)
     (Ecu.fwdRadar, 0x7d0, None): [
       b'\xf1\x00RG3_ SCC -----      1.00 1.02 99110-T1120         ',
